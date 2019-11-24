@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block style %}
+  <title>然小狼 | ranxiaolang</title>
+{% endblock style %}
+
+{% block header %}
+  <!-- header -->
+  <header class="masthead bg-info text-white text-center">
+      <div class="container"><img class="img-fluid d-block mx-auto mb-5" src={% static "assets/img/logo.png" %}>
+          <h2><strong>Image Classifiers</strong></h2>
+          <hr class="star-dark">
+          <h2 class="font-weight-light mb-0">An Image classifiers on Django with RESTAPI</h2>
+      </div>
+  </header>
+{% endblock header %}
+
+{% block content %}
+  <section id="portfolio" class="portfolio">
+      <div class="container">
+          <h2 class="text-uppercase text-center text-secondary">Quick Link</h2>
+          <hr class="star-dark mb-5">
+      </div>
+  </section>
+{% endblock content %}
+
+{% block download %}
+  <section class="bg-info text-white mb-0">
+      <div class="container">
+          <h2 class="text-uppercase text-center text-white">DownLoad</h2>
+          <hr class="star-dark mb-5">
+          <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="https://github.com/nature1995/Image-classifiers-on-Django-with-RESTAPI-V2"><i class="fa fa-download mr-2"></i><span>Download Now!</span></a></div>
+      </div>
+  </section>
+{% endblock download %}
+

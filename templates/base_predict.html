@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block style %}
+  <style>
+      div.showImage > button{
+          margin-top: 280px;
+      }
+      #img1{
+          width: 800px ;
+          height: 350px ;
+          text-align: center;
+      }
+      #faceform{
+          text-align: center;
+      }
+      .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+  </style>
+{% endblock style %}
+
+{% block content %}
+  <section id="predict" class="predict">
+    <br>
+    <br>
+    <div id="app" class="container">
+        <form class="" id="faceform" action="https://api-cn.faceplusplus.com/cardpp/v1/ocrbankcard" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="input-group col-md-6 col-center-block">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="image" @change="getFile1" id="image_file1" aria-describedby="inputGroupFileAddon01">
+              <label class="custom-file-label" for="image_file1">Choose file</label>
+            </div>
+          </div>
+          <br>
+        </form>
+        <br>
+        <div class="col-md-6 col-center-block">
+          <button type="button" href="{% url "home" %}" class="btn btn-secondary">Back</button>
+          <button type="button" @click="submit" class="btn btn-info">Identify</button>
+          <br>
+          <br>
+          <span id="showprediction"></span>
+          <br>
+          <br>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-center-block">
+            <img class="img-responsive" id="img1" :src="src1" hidden>
+          </div>
+        </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script>
+    var app = new Vue({
+      el: '#app',
+      data:{
+          src1: '',
+          file1: null,
+          label: false
+      },
+      methods:{
+        submit:function(){
+            var self = this
+            var labels = []
+            var probabilities = []
+            $('#showprediction').text('In the calculation, please wait...')
+            $.ajax({
+                url: 'api/',
+                type: 'POST',
+                cache: false,
+                data: new FormData($('#faceform')[0]),
+                processData: false,
+                contentType: false,
+                timeout: 30000,//10秒超时时间
+            }).done(function(res) {
+                try {
+                /*    console.log(res.predictions[0].label) */
+                /*
+                for (var i=1; i <= 5; i++) {
+                      labels.append(res.predictions[i].label)
+                }
+                  $('#showprediction').text('Prediction: '+ labels[0])
+                */
+                 $('#showprediction').text('Prediction: '+ res.predictions[0].label)
+                }
+                catch (e) {
+                $('#showprediction').text('Prediction: unknown, please try it again!')
+                }
+            }).fail(function(res) {
+                $('#showprediction').text('Prediction: unknown, please try it again!')
+            });
+        },
+        getFile1:function($event){
+          this.file1 = $event.target.files[0];
+          var reader = new FileReader();
+          reader.readAsDataURL(this.file1);
+          var app = this;
+          reader.onloadend=function() {
+              app.src1 = this.result;
+              $('#img1').attr('hidden',false)
+          };
+        },
+      }
+    })
+</script>
+
+{% endblock scripts %}
+
+
