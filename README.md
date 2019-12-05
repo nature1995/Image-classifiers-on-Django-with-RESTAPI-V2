@@ -9,8 +9,6 @@
 [![python3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg)]()
 [![python3.6](https://img.shields.io/badge/python-3.7-orange.svg)]()
 [![django3.0.0](https://img.shields.io/badge/django-3.0.0-brightgreen.svg)]()
-(https://travis-ci.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI)
-
 
 ## Table of Contents
 
