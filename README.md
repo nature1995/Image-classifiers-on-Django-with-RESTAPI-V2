@@ -6,8 +6,9 @@
 <br>
 
 [![python3.5](https://img.shields.io/badge/python-3.5-blue.svg)]()
-[![python3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg)]()
-[![django2.1.5](https://img.shields.io/badge/django-2.1.5-orange.svg)]()
+[![python3.6](https://img.shields.io/badge/python-3.6-orange.svg)]()
+[![python3.6](https://img.shields.io/badge/python-3.7-brightgreen.svg)]()
+[![django3.0.0](https://img.shields.io/badge/django-3.0.0-brightgreen.svg)]()
 [![Build Status](https://travis-ci.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI.svg?branch=master)](https://travis-ci.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI)
 
 ## Introduction  
@@ -147,7 +148,7 @@ POST http://127.0.0.1:8000/predict_VGG19/api/
 ```
 
 ## Compatibility
-The codes are tested using Travis-CI platform with django 2.1.x and Python 3.5, 3.6
+The codes are tested using Travis-CI platform with Django>=2.1.5 or Django==3.0.0 and Python 3.5, 3.6, 3.7.
 
 ## Issue
 If you have questions or issues, please feel free to tell us.

@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 import qrcode
-from django.utils.six import BytesIO
+from io import BytesIO
 
 
 @login_required(login_url='/accounts/login/')
