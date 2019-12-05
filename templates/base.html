@@ -21,107 +21,85 @@
 
 <!-- navbar -->
 <body id="page-top">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">AI</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-info text-white rounded" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'predict' %}">Project</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
-                </ul>
-            <!-- Login / Signup -->
-            <li class="nav-item text-right">
-            {% if user.is_authenticated %}
-            <a class="btn btn-info text-right border rounded d-inline-flex mx-auto align-items-lg-center text-uppercase" href="JavaScript:{document.getElementById('退出').submit()}">Logout</a>
-            <form id= '退出' method="POST" action='{% url 'LogoutPage' %}' align='center'>
-            {% csrf_token %}
-            <input type="hidden">
-            </form>
-            {% else %}
-            <a class="btn btn-info text-break text-right border rounded d-inline-flex mx-auto text-uppercase" href="{% url 'LoginPage' %}">Sign in</a>&nbsp;
-            <a class="btn btn-info text-right border rounded d-inline-flex mx-auto align-items-lg-center text-uppercase" href="{% url 'SignupPage' %}">Sign up</a>
-            {% endif %}
-            </li>
-            </div>
-        </div>
-    </nav>
-
-    {% block header %}
-{#      <!-- header -->#}
-{#      <header class="masthead bg-info text-white text-center">#}
-{#          <div class="container"><img class="img-fluid d-block mx-auto mb-5" src="assets/img/logo.png">#}
-{#              <h2><strong>Toxic Content Classification</strong></h2>#}
-{#              <hr class="star-dark">#}
-{#              <h2 class="font-weight-light mb-0">A application which can detect content</h2>#}
-{#          </div>#}
-{#      </header>#}
-    {% endblock header %}
-
-    {% block content %}
-{#      <section id="portfolio" class="portfolio">#}
-{#          <div class="container">#}
-{#              <h2 class="text-uppercase text-center text-secondary">Quastions</h2>#}
-{#              <hr class="star-dark mb-5">#}
-{#          </div>#}
-{#      </section>#}
-
-    {% endblock content %}
-
-    {% block download %}
-{#      <section class="bg-info text-white mb-0">#}
-{#          <div class="container">#}
-{#              <h2 class="text-uppercase text-center text-white">DownLoad</h2>#}
-{#              <hr class="star-dark mb-5">#}
-{#              <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><i class="fa fa-download mr-2"></i><span>Download Now!</span></a></div>#}
-{#          </div>#}
-{#      </section>        #}
-    {% endblock download %}
-
-    <!-- footer -->
-    <footer class="footer text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Location</h4>
-                    <p>Stevens Institute of Technology<br>1 Castle Point Terrace, Hoboken, NJ<br></p>
-                </div>
-                <div class="col-md-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase">Links</h4>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-                                                        role="button" href="#"><i class="fa fa-weixin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-                                                        role="button" href="#"><i class="fa fa-weibo fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-                                                        role="button" href="https://github.com/nature1995/Image-classifiers-on-Django-with-RESTAPI-V2"><i class="fa fa-github fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
-                                                        role="button" href="https://github.com/nature1995/Image-classifiers-on-Django-with-RESTAPI-V2"><i class="fa fa-code-fork fa-fw"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4 class="text-uppercase mb-4">About</h4>
-                    <p class="lead mb-0"><span>Ziran Gong</span></p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>©2018-2019&nbsp;&nbsp;然小狼&nbsp|&nbsp;Ranxiaolang</small></div>
+  <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">AI</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-info text-white rounded" aria-controls="navbarResponsive"
+          aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'home' %}">Home</a></li>
+            <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="{% url 'predict' %}">Project</a></li>
+            <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+            <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+        </ul>
+      <!-- Login / Signup -->
+      <li class="nav-item text-right">
+      {% if user.is_authenticated %}
+      <a class="btn btn-info text-right border rounded d-inline-flex mx-auto align-items-lg-center text-uppercase" href="JavaScript:{document.getElementById('退出').submit()}">Logout</a>
+      <form id= '退出' method="POST" action='{% url 'LogoutPage' %}' align='center'>
+      {% csrf_token %}
+      <input type="hidden">
+      </form>
+      {% else %}
+      <a class="btn btn-info text-break text-right border rounded d-inline-flex mx-auto text-uppercase" href="{% url 'LoginPage' %}">Sign in</a>&nbsp;
+      <a class="btn btn-info text-right border rounded d-inline-flex mx-auto align-items-lg-center text-uppercase" href="{% url 'SignupPage' %}">Sign up</a>
+      {% endif %}
+      </li>
+      </div>
     </div>
+  </nav>
 
-    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+  {% block header %}
+  {% endblock header %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src={% static "assets/js/freelancer.js" %}></script>
-    <!-- production version, optimized for size and speed -->
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  {% block content %}
+  {% endblock content %}
 
-    {% block scripts %}
-    {% endblock scripts %}
+  {% block download %}
+  {% endblock download %}
+
+  <!-- footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Location</h4>
+          <p>Stevens Institute of Technology<br>1 Castle Point Terrace, Hoboken, NJ<br></p>
+        </div>
+        <div class="col-md-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase">Links</h4>
+          <ul class="list-inline">
+            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                            role="button" href="#"><i class="fa fa-weixin fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                            role="button" href="#"><i class="fa fa-weibo fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                            role="button" href="https://github.com/nature1995/Image-classifiers-on-Django-with-RESTAPI-V2"><i class="fa fa-github fa-fw"></i></a></li>
+            <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                            role="button" href="https://github.com/nature1995/Image-classifiers-on-Django-with-RESTAPI-V2"><i class="fa fa-code-fork fa-fw"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="text-uppercase mb-4">About</h4>
+          <p class="lead mb-0"><span>Ziran Gong</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="copyright py-4 text-center text-white">
+      <div class="container"><small>©2018-2019&nbsp;&nbsp;然小狼&nbsp|&nbsp;Ranxiaolang</small></div>
+  </div>
+
+  <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src={% static "assets/js/freelancer.js" %}></script>
+  <!-- production version, optimized for size and speed -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+  {% block scripts %}
+  {% endblock scripts %}
 </body>
 
 </html>

@@ -6,10 +6,23 @@
 <br>
 
 [![python3.5](https://img.shields.io/badge/python-3.5-blue.svg)]()
-[![python3.6](https://img.shields.io/badge/python-3.6-orange.svg)]()
-[![python3.6](https://img.shields.io/badge/python-3.7-brightgreen.svg)]()
+[![python3.6](https://img.shields.io/badge/python-3.6-brightgreen.svg)]()
+[![python3.6](https://img.shields.io/badge/python-3.7-orange.svg)]()
 [![django3.0.0](https://img.shields.io/badge/django-3.0.0-brightgreen.svg)]()
 [![Build Status](https://travis-ci.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI.svg?branch=master)](https://travis-ci.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI)
+
+
+## Table of Contents
+
+- [Introduction](#Introduction)
+- [Description](#Description)
+- [Features](#Features)
+- [Architecture](#Architecture)
+- [Usage](#usage)
+- [Results](#Results)
+- [Issue](#Issue)
+- [Others](#Others)
+- [License](#license)
 
 ## Introduction  
 A Keras deep learning image classifiers on Django server with REST API. It can help you quickly deploy and apply ML models.
@@ -35,16 +48,11 @@ Machine Learning (ML) models are typically trained and test on benchmark data se
 - [x] Run all the functions in local server and cloud server
 - [x] Design and using machine learning CI/CD Tools such as Git, Jenkins, Nginx, uwgsi for deployment.
 
-## Architicture
+## Architecture
 
 <div align="center">
 <img src="https://s2.ax1x.com/2019/05/01/EJBx0S.png" width="600" height="300" alt="Result01.png" title="Result01.png" />
 </div>
-
-## Requirements
-```
-pip3 install -r requirements.txt
-```
 
 ## Usage
 I assume you already have your own local virtual environment.  
@@ -60,7 +68,7 @@ python manage.py runserver 0.0.0.0:8000
 ```
 Access the web page though this link: http://127.0.0.1:8000/
 
-## Web API for image classify
+## Results
 
 Name         		| Input Size| API address
 ---------    		| ----------| ----------------------------------------------------
@@ -112,7 +120,7 @@ NASNetLarge			|	0.837		|		0.959
 #### Example
 
 Using [Postman](https://www.getpostman.com/downloads/) to test the API:  
-POST http://127.0.0.1:8000/predict_VGG19/api/
+POST http://127.0.0.1:8000/predict/api/
 
 **Result**
 ```
@@ -148,7 +156,7 @@ POST http://127.0.0.1:8000/predict_VGG19/api/
 ```
 
 ## Compatibility
-The codes are tested using Travis-CI platform with Django>=2.1.5 or Django==3.0.0 and Python 3.5, 3.6, 3.7.
+Support to Django>=2.1.5 or Django==3.0.0 and Python 3.5, 3.6, 3.7.
 
 ## Issue
 If you have questions or issues, please feel free to tell us.
@@ -168,10 +176,11 @@ password: ranxiaolang
 ```
 Access the web page though this link: http://127.0.0.1:8000/admin 
 
-## Author
+## Contributors
 
-* **Ziran Gong** - [Web Page](http://ranxiaolang.com)
-* **Sergul Aydore** - [Web Page](https://github.com/sergulaydore)
+[@nature1995](http://ranxiaolang.com)  
+[@sergulaydore](https://github.com/sergulaydore)
 
 ## License
-This software is licensed under the MIT License. For more information, read the file [LICENSE](https://github.com/nature1995/Image-classifiers-on-Django-with-RESTAPI-V2/blob/master/LICENSE).
+
+[MIT](LICENSE) ©
