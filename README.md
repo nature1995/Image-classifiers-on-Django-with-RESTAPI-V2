@@ -12,14 +12,14 @@
 
 ## Table of Contents
 
-- [Introduction](#Introduction)
-- [Description](#Description)
-- [Features](#Features)
-- [Architecture](#Architecture)
+- [Introduction](#introduction)
+- [Description](#description)
+- [Features](#features)
+- [Architecture](#architecture)
 - [Usage](#usage)
-- [Results](#Results)
-- [Issue](#Issue)
-- [Others](#Others)
+- [Results](#results)
+- [Issue](#issue)
+- [Others](#others)
 - [License](#license)
 
 ## Introduction  
@@ -53,18 +53,21 @@ Machine Learning (ML) models are typically trained and test on benchmark data se
 </div>
 
 ## Usage
+
 I assume you already have your own local virtual environment.  
 ```
 git clone https://github.com/nature1995/image-classify-django-server.git
 ```
 ```
 pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py collectstatic
+python manage.py makemigrations  # Option
+python manage.py migrate # Option
+python manage.py collectstatic # Option
 python manage.py runserver 0.0.0.0:8000
 ```
 Access the web page though this link: http://127.0.0.1:8000/
+
+If you would like to use the [previous version](https://github.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI). Here is the link.
 
 ## Results
 
