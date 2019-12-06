@@ -69,6 +69,14 @@ Access the web page though this link: http://127.0.0.1:8000/
 
 If you would like to use the [previous version](https://github.com/nature1995/AI-Image-classifiers-on-Django-with-RESTAPI). Here is the link.
 
+### Docker
+You can use `dockerfile` to build this project easily.
+```sh
+# Follow any instruction to install the docker-ce, docker for OS X or PC in your device
+docker build -t ai_image_classifiers .
+docker run -it --rm -p 8000:8000 --name ai_image_classifiers_app ai_image_classifiers:latest
+```
+
 ## Results
 
 Name         		| Input Size| API address
